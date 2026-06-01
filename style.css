@@ -191,3 +191,17 @@ body{
     background:white;
     box-shadow:0 0 0 3px rgba(0,0,0,0.08);
 }
+.activity-card{
+    background:white;
+    border-radius:18px;
+    padding:25px;
+    margin-top:25px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.08);
+}
+
+.activity-item{
+    padding:15px;
+    background:#f5f7fa;
+    border-radius:12px;
+    margin-top:10px;
+}
