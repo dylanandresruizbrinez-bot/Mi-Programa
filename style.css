@@ -130,3 +130,10 @@ body{
     cursor:pointer;
     margin-right:20px;
 }
+.sidebar{
+    transition:0.3s;
+}
+
+.sidebar.collapsed{
+    width:70px;
+}
