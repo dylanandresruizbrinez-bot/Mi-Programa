@@ -137,3 +137,41 @@ body{
 .sidebar.collapsed{
     width:70px;
 }
+/* ===== ANIMACIONES ===== */
+
+.sidebar,
+.topbar,
+.main-content{
+    transition:all 0.3s ease;
+}
+
+/* ===== SIDEBAR COLAPSADA ===== */
+
+.sidebar.collapsed{
+    width:70px;
+}
+
+/* Ocultar menú */
+
+.sidebar.collapsed .menu-btn{
+    color:transparent;
+}
+
+/* Logo pequeño */
+
+.sidebar.collapsed .logo{
+    font-size:16px;
+    letter-spacing:0;
+}
+
+/* ===== TOPBAR EXPANDIDA ===== */
+
+.topbar.expanded{
+    left:70px;
+}
+
+/* ===== CONTENIDO EXPANDIDO ===== */
+
+.main-content.expanded{
+    margin-left:70px;
+}
