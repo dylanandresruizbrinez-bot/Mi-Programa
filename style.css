@@ -49,3 +49,9 @@ body{
     font-weight:600;
     color:#333;
 }
+.main-content{
+    margin-left:220px;
+    margin-top:70px;
+    padding:30px;
+    min-height:calc(100vh - 70px);
+}
