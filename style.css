@@ -123,3 +123,10 @@ body{
     font-weight:bold;
     color:#222;
 }
+.toggle-sidebar{
+    border:none;
+    background:none;
+    font-size:24px;
+    cursor:pointer;
+    margin-right:20px;
+}
