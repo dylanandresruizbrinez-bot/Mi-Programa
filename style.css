@@ -205,3 +205,8 @@ body{
     border-radius:12px;
     margin-top:10px;
 }
+.menu-btn.active{
+    background:white;
+    color:#333;
+    font-weight:bold;
+}
