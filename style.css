@@ -71,3 +71,26 @@ body{
 .card p{
     color:#666;
 }
+.menu{
+    margin-top:40px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    padding:0 15px;
+}
+
+.menu-btn{
+    border:none;
+    background:rgba(255,255,255,0.08);
+    color:white;
+    padding:14px;
+    border-radius:12px;
+    cursor:pointer;
+    text-align:left;
+    transition:0.25s;
+}
+
+.menu-btn:hover{
+    background:rgba(255,255,255,0.18);
+    transform:translateX(4px);
+}
