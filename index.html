@@ -13,10 +13,13 @@
 
     <!-- CABECERA -->
     <header>
+
         <h1>AUTOCORE</h1>
+
         <div id="system-status">
             Estado: ACTIVO
         </div>
+
     </header>
 
     <!-- CONTENEDOR PRINCIPAL -->
@@ -27,72 +30,305 @@
 
             <button>Panel General</button>
 
-            <button>Estadísticas</button>
+            <button>Estado Actual</button>
 
-            <button>Memoria</button>
+            <button>Registro</button>
 
             <button>Configuración</button>
 
-            <button>Objetivos</button>
-
-            <button>Registros</button>
+            <button>Estadísticas</button>
 
         </aside>
 
-        <!-- ÁREA CENTRAL -->
-        <main>
+        <!-- CONTENIDO -->
+        <main id="panel-principal">
 
-            <!-- ESTADO -->
-            <section id="estado">
+            <!-- PANEL PRINCIPAL -->
+            <section class="panel-card">
 
-                <h2>Estado del Sistema</h2>
+                <h2>Panel Principal</h2>
 
-                <p>Energía: <span id="energia">100%</span></p>
+                <div class="info-grid">
 
-                <p>Errores: <span id="errores">0</span></p>
+                    <div class="info-box">
+                        <h3>Estado</h3>
+                        <span id="estadoGeneral">ACTIVO</span>
+                    </div>
 
-                <p>Tareas: <span id="tareas">0</span></p>
+                    <div class="info-box">
+                        <h3>Modo</h3>
+                        <span id="modoSistema">NORMAL</span>
+                    </div>
 
-                <p>Modo: <span id="modo">Normal</span></p>
+                    <div class="info-box">
+                        <h3>Estabilidad</h3>
+                        <span id="estabilidad">100%</span>
+                    </div>
+
+                    <div class="info-box">
+                        <h3>Nivel IA</h3>
+                        <span id="nivelIA">1</span>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ESTADO ACTUAL -->
+            <section id="estado-actual" class="panel-card">
+
+                <h2>Estado Actual</h2>
+
+                <div class="indicadores">
+
+                    <div class="led activo"></div>
+
+                    <div class="led monitoreo"></div>
+
+                    <div class="led aprendizaje"></div>
+
+                </div>
+
+                <div class="estado-grid">
+
+                    <div class="estado-item">
+                        <h3>Estado</h3>
+                        <span id="estadoSistema">ACTIVO</span>
+                    </div>
+
+                    <div class="estado-item">
+                        <h3>Modo</h3>
+                        <span id="modoActual">NORMAL</span>
+                    </div>
+
+                    <div class="estado-item">
+                        <h3>Energía</h3>
+                        <span id="energiaActual">100%</span>
+                    </div>
+
+                    <div class="estado-item">
+                        <h3>Estabilidad</h3>
+                        <span id="estabilidadActual">100%</span>
+                    </div>
+
+                    <div class="estado-item">
+                        <h3>Errores</h3>
+                        <span id="erroresActuales">0</span>
+                    </div>
+
+                    <div class="estado-item">
+                        <h3>Tareas</h3>
+                        <span id="tareasActuales">0</span>
+                    </div>
+
+                    <div class="estado-item">
+                        <h3>Prioridad</h3>
+                        <span id="prioridadActual">BAJA</span>
+                    </div>
+
+                    <div class="estado-item">
+                        <h3>Última Revisión</h3>
+                        <span id="ultimaRevision">00:00:00</span>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- REGISTRO DE EVENTOS -->
+            <section id="registro-eventos" class="panel-card">
+
+                <div class="registro-header">
+
+                    <h2>Registro de Eventos</h2>
+
+                    <button id="limpiarLog">
+                        Limpiar Registro
+                    </button>
+
+                </div>
+
+                <div class="log-resumen">
+
+                    <div>Total Eventos: 0</div>
+
+                    <div>Errores: 0</div>
+
+                    <div>Decisiones: 0</div>
+
+                    <div>Aprendizajes: 0</div>
+
+                </div>
+
+                <div id="logContainer">
+
+                    <div class="evento inicio">
+
+                        <span class="hora">00:00:00</span>
+
+                        <span class="tipo">[SISTEMA]</span>
+
+                        <span class="mensaje">
+                            AutoCore iniciado.
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- CONFIGURACIÓN -->
+            <section id="configuracion" class="panel-card">
+
+                <h2>Configuración</h2>
+
+                <div class="config-group">
+
+                    <h3>Sistema</h3>
+
+                    <label>
+                        <input type="checkbox" id="inicioAutomatico">
+                        Inicio Automático
+                    </label>
+
+                    <label>
+                        <input type="checkbox" id="guardadoAutomatico">
+                        Guardado Automático
+                    </label>
+
+                </div>
+
+                <div class="config-group">
+
+                    <h3>Monitoreo</h3>
+
+                    <label>Frecuencia de revisión</label>
+
+                    <select id="frecuenciaRevision">
+
+                        <option>1 segundo</option>
+                        <option>5 segundos</option>
+                        <option>10 segundos</option>
+                        <option>30 segundos</option>
+
+                    </select>
+
+                </div>
+
+                <div class="config-group">
+
+                    <h3>Memoria</h3>
+
+                    <label>Capacidad máxima</label>
+
+                    <input
+                        type="range"
+                        id="capacidadMemoria"
+                        min="100"
+                        max="10000"
+                        value="1000">
+
+                </div>
+
+                <div class="config-group">
+
+                    <h3>Aprendizaje</h3>
+
+                    <label>
+                        <input type="checkbox" id="aprendizajeActivo">
+                        Activar aprendizaje
+                    </label>
+
+                </div>
+
+                <div class="config-group">
+
+                    <h3>Interfaz</h3>
+
+                    <select id="tema">
+
+                        <option>Oscuro</option>
+                        <option>Claro</option>
+                        <option>AutoCore</option>
+
+                    </select>
+
+                </div>
+
+                <div class="config-group">
+
+                    <h3>Seguridad</h3>
+
+                    <label>
+                        <input type="checkbox" id="modoSeguro">
+                        Modo Seguro
+                    </label>
+
+                </div>
 
             </section>
 
             <!-- ESTADÍSTICAS -->
-            <section id="estadisticas">
+            <section id="estadisticas" class="panel-card">
 
                 <h2>Estadísticas</h2>
 
-                <p>Tiempo activo: 0 min</p>
+                <div class="stats-grid">
 
-                <p>Decisiones tomadas: 0</p>
+                    <div class="stat-box">
+                        <h3>Tiempo Activo</h3>
+                        <span id="tiempoActivo">0 min</span>
+                    </div>
 
-                <p>Correcciones aplicadas: 0</p>
+                    <div class="stat-box">
+                        <h3>Revisiones</h3>
+                        <span id="totalRevisiones">0</span>
+                    </div>
 
-            </section>
+                    <div class="stat-box">
+                        <h3>Decisiones</h3>
+                        <span id="totalDecisiones">0</span>
+                    </div>
 
-            <!-- OBJETIVOS -->
-            <section id="objetivos">
+                    <div class="stat-box">
+                        <h3>Errores</h3>
+                        <span id="totalErrores">0</span>
+                    </div>
 
-                <h2>Objetivos Actuales</h2>
+                    <div class="stat-box">
+                        <h3>Correcciones</h3>
+                        <span id="totalCorrecciones">0</span>
+                    </div>
 
-                <ul>
+                    <div class="stat-box">
+                        <h3>Tareas Completadas</h3>
+                        <span id="tareasCompletadas">0</span>
+                    </div>
 
-                    <li>Mantener estabilidad</li>
+                    <div class="stat-box">
+                        <h3>Aprendizajes</h3>
+                        <span id="aprendizajes">0</span>
+                    </div>
 
-                    <li>Reducir errores</li>
+                    <div class="stat-box">
+                        <h3>Eficiencia</h3>
+                        <span id="eficiencia">100%</span>
+                    </div>
 
-                    <li>Optimizar rendimiento</li>
+                </div>
 
-                </ul>
+                <div class="rendimiento">
 
-            </section>
+                    <label>Eficiencia General</label>
 
-            <!-- DECISIONES -->
-            <section id="decisiones">
+                    <progress
+                        id="barraEficiencia"
+                        value="100"
+                        max="100">
+                    </progress>
 
-                <h2>Última Decisión</h2>
-
-                <p>Esperando análisis...</p>
+                </div>
 
             </section>
 
@@ -100,20 +336,7 @@
 
     </div>
 
-    <!-- CONSOLA -->
-    <section id="logs">
-
-        <h2>Registro del Sistema</h2>
-
-        <div id="log-container">
-
-            <p>[Sistema] AutoCore iniciado.</p>
-
-        </div>
-
-    </section>
-
-    <!-- PIE -->
+    <!-- PIE DE PÁGINA -->
     <footer>
 
         <p>AutoCore v1.0</p>
