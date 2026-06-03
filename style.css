@@ -1,0 +1,383 @@
+/* ======================================
+   AUTOCORE - STYLE.CSS COMPLETO
+====================================== */
+
+/* VARIABLES (TEMA BASE) */
+:root{
+
+    --bg:#0b0f14;
+    --panel:#111827;
+    --panel2:#1f2937;
+    --text:#e6edf3;
+    --accent:#22c55e;
+
+}
+
+/* RESET */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* BASE */
+body{
+
+    background:var(--bg);
+    color:var(--text);
+    font-family:Arial, Helvetica, sans-serif;
+    min-height:100vh;
+
+}
+
+/* ======================================
+   TEMAS
+====================================== */
+
+.tema-oscuro{
+    --bg:#0b0f14;
+    --panel:#111827;
+    --panel2:#1f2937;
+    --text:#e6edf3;
+    --accent:#22c55e;
+}
+
+.tema-claro{
+    --bg:#f5f5f5;
+    --panel:#ffffff;
+    --panel2:#e5e7eb;
+    --text:#111827;
+    --accent:#2563eb;
+}
+
+.tema-autocore{
+    --bg:#020617;
+    --panel:#06111f;
+    --panel2:#0f172a;
+    --text:#00ffcc;
+    --accent:#00ff88;
+
+    background:linear-gradient(-45deg,#020617,#06111f,#0f172a,#021c2f);
+    background-size:400% 400%;
+    animation:fondoAutocore 15s ease infinite;
+}
+
+/* ======================================
+   CABECERA
+====================================== */
+
+header{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px;
+    background:var(--panel);
+    border-bottom:2px solid var(--panel2);
+
+}
+
+header h1{
+    font-size:clamp(1.5rem,4vw,2.5rem);
+    letter-spacing:3px;
+}
+
+#system-status{
+    padding:10px 15px;
+    background:var(--accent);
+    border-radius:8px;
+    font-weight:bold;
+}
+
+/* ======================================
+   LAYOUT
+====================================== */
+
+.container{
+    display:flex;
+    min-height:calc(100vh - 140px);
+}
+
+/* MENÚ */
+aside{
+    width:220px;
+    background:var(--panel);
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    padding:20px;
+    border-right:2px solid var(--panel2);
+}
+
+aside button{
+    background:var(--panel2);
+    color:var(--text);
+    border:none;
+    padding:12px;
+    cursor:pointer;
+    border-radius:8px;
+}
+
+aside button:hover{
+    filter:brightness(1.2);
+}
+
+/* MAIN */
+main{
+    flex:1;
+    padding:20px;
+    display:grid;
+    gap:20px;
+}
+
+/* ======================================
+   CARDS
+====================================== */
+
+.panel-card{
+    background:var(--panel);
+    border:1px solid var(--panel2);
+    border-radius:12px;
+    padding:20px;
+    box-shadow:0 0 10px rgba(0,0,0,.4);
+    animation:aparecer .6s ease;
+}
+
+.panel-card h2{
+    margin-bottom:15px;
+}
+
+/* GRIDS */
+.info-grid,
+.estado-grid,
+.stats-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:15px;
+}
+
+.info-box,
+.estado-item,
+.stat-box{
+    background:var(--panel2);
+    padding:15px;
+    border-radius:10px;
+    text-align:center;
+}
+
+.info-box span,
+.estado-item span,
+.stat-box span{
+    font-size:1.2rem;
+    font-weight:bold;
+}
+
+/* ======================================
+   LEDS
+====================================== */
+
+.indicadores{
+    display:flex;
+    gap:12px;
+    margin-bottom:20px;
+}
+
+.led{
+    width:16px;
+    height:16px;
+    border-radius:50%;
+    animation:parpadeo 2s infinite;
+}
+
+.activo{
+    background:#22c55e;
+    box-shadow:0 0 12px #22c55e;
+}
+
+.monitoreo{
+    background:#3b82f6;
+    box-shadow:0 0 12px #3b82f6;
+}
+
+.aprendizaje{
+    background:#a855f7;
+    box-shadow:0 0 12px #a855f7;
+}
+
+/* ======================================
+   REGISTRO
+====================================== */
+
+.registro-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:15px;
+}
+
+.log-resumen{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:10px;
+    margin-bottom:15px;
+}
+
+#logContainer{
+    max-height:250px;
+    overflow-y:auto;
+    background:#0f172a;
+    padding:10px;
+    border-radius:8px;
+}
+
+.evento{
+    padding:8px;
+    border-bottom:1px solid var(--panel2);
+    animation:nuevoEvento .3s ease;
+}
+
+.hora{ color:#38bdf8; }
+.tipo{ color:#22c55e; margin:0 8px; }
+
+/* ======================================
+   CONFIG
+====================================== */
+
+.config-group{
+    margin-bottom:20px;
+}
+
+.config-group label{
+    display:block;
+    margin:8px 0;
+}
+
+select,
+input,
+button{
+    max-width:100%;
+}
+
+/* ======================================
+   PROGRESS
+====================================== */
+
+progress{
+    width:100%;
+    height:20px;
+}
+
+/* ======================================
+   FOOTER
+====================================== */
+
+footer{
+    text-align:center;
+    padding:15px;
+    background:var(--panel);
+    border-top:2px solid var(--panel2);
+}
+
+/* ======================================
+   ANIMACIONES
+====================================== */
+
+@keyframes aparecer{
+    from{opacity:0;transform:translateY(15px);}
+    to{opacity:1;transform:translateY(0);}
+}
+
+@keyframes parpadeo{
+    0%,100%{opacity:.4;}
+    50%{opacity:1;}
+}
+
+@keyframes nuevoEvento{
+    from{opacity:0;transform:translateX(-10px);}
+    to{opacity:1;transform:translateX(0);}
+}
+
+@keyframes alerta{
+    0%{box-shadow:0 0 0 red;}
+    50%{box-shadow:0 0 20px red;}
+    100%{box-shadow:0 0 0 red;}
+}
+
+@keyframes fondoAutocore{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+/* ALERTA */
+.alerta .panel-card{
+    animation:alerta 1s infinite;
+}
+
+/* SIN ANIMACIONES */
+.sin-animaciones *{
+    animation:none !important;
+    transition:none !important;
+}
+
+/* ======================================
+   RESPONSIVE
+====================================== */
+
+@media(max-width:1200px){
+
+    .container{
+        flex-direction:column;
+    }
+
+    aside{
+        width:100%;
+        flex-direction:row;
+        flex-wrap:wrap;
+        justify-content:center;
+        border-right:none;
+        border-bottom:2px solid var(--panel2);
+    }
+
+    aside button{
+        flex:1 1 180px;
+    }
+}
+
+@media(max-width:768px){
+
+    header{
+        flex-direction:column;
+        gap:15px;
+        text-align:center;
+    }
+
+    .info-grid,
+    .estado-grid,
+    .stats-grid,
+    .log-resumen{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+@media(max-width:500px){
+
+    .info-grid,
+    .estado-grid,
+    .stats-grid,
+    .log-resumen{
+        grid-template-columns:1fr;
+    }
+
+    aside button{
+        width:100%;
+    }
+
+    header h1{
+        font-size:1.5rem;
+    }
+
+    .panel-card{
+        padding:15px;
+    }
+}
