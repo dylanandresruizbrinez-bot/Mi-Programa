@@ -60,7 +60,7 @@ aprendizajes: [],
 historialEstados: [],
 
 tareasCompletadas: 0
-```
+
 
 };
 
@@ -82,7 +82,7 @@ const evento = {
 };
 
 memoria.eventos.push(evento);
-```
+
 
 }
 
@@ -92,18 +92,18 @@ memoria.eventos.push(evento);
 
 function revisarEnergia() {
 
-```
+
 sistema.energia = Math.max(
     0,
     sistema.energia - Math.floor(Math.random() * 2)
 );
-```
+
 
 }
 
 function revisarErrores() {
+    
 
-```
 if (Math.random() < 0.1) {
 
     sistema.errores++;
@@ -116,25 +116,25 @@ if (Math.random() < 0.1) {
     );
 
 }
-```
+
 
 }
 
 function revisarEstabilidad() {
 
-```
+
 sistema.estabilidad =
     Math.max(
         0,
         100 - (sistema.errores * 5)
     );
-```
+
 
 }
 
 function monitor() {
 
-```
+
 revisarEnergia();
 
 revisarErrores();
@@ -156,7 +156,7 @@ registrar(
     "ANALISIS",
     "Revisión completada."
 );
-```
+
 
 }
 
@@ -166,7 +166,7 @@ registrar(
 
 function obtenerDiagnostico() {
 
-```
+
 if (sistema.errores >= 10) {
 
     return "Sistema crítico";
@@ -180,13 +180,13 @@ if (sistema.energia < 20) {
 }
 
 return "Funcionamiento normal";
-```
+
 
 }
 
 function analizar() {
 
-```
+
 if (sistema.energia >= 70) {
 
     sistema.prioridad = "BAJA";
@@ -218,7 +218,7 @@ registrar(
     "ANALISIS",
     sistema.diagnostico
 );
-```
+
 
 }
 
@@ -228,7 +228,7 @@ registrar(
 
 function decidir() {
 
-```
+
 sistema.accionPendiente = null;
 
 if (sistema.errores >= 10) {
@@ -276,7 +276,7 @@ if (
         "REDUCIR_CARGA";
 
 }
-```
+
 
 }
 
@@ -286,7 +286,7 @@ if (
 
 function guardarDecision(accion) {
 
-```
+
 memoria.decisiones.push({
 
     hora: new Date().toLocaleTimeString(),
@@ -294,13 +294,13 @@ memoria.decisiones.push({
     accion
 
 });
-```
+
 
 }
 
 function guardarEstado() {
+    
 
-```
 memoria.historialEstados.push({
 
     hora: new Date().toLocaleTimeString(),
@@ -314,13 +314,13 @@ memoria.historialEstados.push({
     modo: sistema.modo
 
 });
-```
+
 
 }
 
 function aprender(regla) {
 
-```
+
 memoria.aprendizajes.push({
 
     hora: new Date().toLocaleTimeString(),
@@ -330,13 +330,13 @@ memoria.aprendizajes.push({
 });
 
 estadisticas.aprendizajes++;
-```
+
 
 }
 
 function guardarMemoria() {
 
-```
+
 localStorage.setItem(
 
     "autocore_memoria",
@@ -344,13 +344,13 @@ localStorage.setItem(
     JSON.stringify(memoria)
 
 );
-```
+
 
 }
 
 function cargarMemoria() {
 
-```
+
 const datos =
     localStorage.getItem(
         "autocore_memoria"
@@ -364,7 +364,7 @@ if (datos) {
     );
 
 }
-```
+
 
 }
 
@@ -374,20 +374,20 @@ if (datos) {
 
 function activarAhorro() {
 
-```
+
 sistema.modo = "AHORRO";
 
 registrar(
     "ACCION",
     "Modo ahorro activado."
 );
-```
+
 
 }
 
 function repararSistema() {
 
-```
+
 sistema.errores = 0;
 
 estadisticas.correcciones++;
@@ -396,26 +396,26 @@ registrar(
     "ACCION",
     "Sistema reparado."
 );
-```
+
 
 }
 
 function optimizarSistema() {
 
-```
+
 sistema.estabilidad = 100;
 
 registrar(
     "ACCION",
     "Optimización completada."
 );
-```
+
 
 }
 
 function reducirCarga() {
 
-```
+
 sistema.cpuUso =
     Math.max(0,
     sistema.cpuUso - 30);
@@ -428,13 +428,13 @@ registrar(
     "ACCION",
     "Carga reducida."
 );
-```
+
 
 }
 
 function protocoloEmergencia() {
 
-```
+
 sistema.modo = "EMERGENCIA";
 
 sistema.errores = 0;
@@ -449,13 +449,13 @@ registrar(
     "EMERGENCIA",
     "Protocolo ejecutado."
 );
-```
+
 
 }
 
 function ejecutar() {
 
-```
+
 if (!sistema.accionPendiente) return;
 
 guardarDecision(
@@ -489,7 +489,7 @@ switch (sistema.accionPendiente) {
 estadisticas.decisiones++;
 
 sistema.accionPendiente = null;
-```
+
 
 }
 
@@ -499,7 +499,7 @@ sistema.accionPendiente = null;
 
 function actualizarUI() {
 
-```
+    
 const energia =
     document.getElementById(
         "energiaActual"
@@ -535,7 +535,7 @@ if (errores) {
         sistema.errores;
 
 }
-```
+
 
 }
 
@@ -545,7 +545,7 @@ if (errores) {
 
 function cicloPrincipal() {
 
-```
+
 monitor();
 
 analizar();
@@ -559,7 +559,7 @@ guardarEstado();
 guardarMemoria();
 
 actualizarUI();
-```
+
 
 }
 
