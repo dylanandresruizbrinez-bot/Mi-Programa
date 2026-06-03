@@ -70,7 +70,7 @@ tareasCompletadas: 0
 
 function registrar(tipo, mensaje) {
 
-```
+
 const evento = {
 
     hora: new Date().toLocaleTimeString(),
