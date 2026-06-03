@@ -26,7 +26,7 @@ ultimaRevision: "--:--:--",
 diagnostico: "Iniciando...",
 
 accionPendiente: null
-```
+
 
 };
 
@@ -50,7 +50,7 @@ aprendizajes: 0
 
 const memoria = {
 
-```
+
 eventos: [],
 
 decisiones: [],
