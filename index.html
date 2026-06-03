@@ -1,80 +1,127 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NEXUS</title>
+    <title>AutoCore</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <div class="sidebar" id="sidebar">
+    <!-- CABECERA -->
+    <header>
+        <h1>AUTOCORE</h1>
+        <div id="system-status">
+            Estado: ACTIVO
+        </div>
+    </header>
 
-        <h1 class="logo">NEXUS</h1>
+    <!-- CONTENEDOR PRINCIPAL -->
+    <div class="container">
 
-        <div class="menu">
-            <button class="menu-btn active">Inicio</button>
-            <button class="menu-btn">Panel</button>
-            <button class="menu-btn">Herramientas</button>
-            <button class="menu-btn">Configuración</button>
+        <!-- MENÚ LATERAL -->
+        <aside>
+
+            <button>Panel General</button>
+
+            <button>Estadísticas</button>
+
+            <button>Memoria</button>
+
+            <button>Configuración</button>
+
+            <button>Objetivos</button>
+
+            <button>Registros</button>
+
+        </aside>
+
+        <!-- ÁREA CENTRAL -->
+        <main>
+
+            <!-- ESTADO -->
+            <section id="estado">
+
+                <h2>Estado del Sistema</h2>
+
+                <p>Energía: <span id="energia">100%</span></p>
+
+                <p>Errores: <span id="errores">0</span></p>
+
+                <p>Tareas: <span id="tareas">0</span></p>
+
+                <p>Modo: <span id="modo">Normal</span></p>
+
+            </section>
+
+            <!-- ESTADÍSTICAS -->
+            <section id="estadisticas">
+
+                <h2>Estadísticas</h2>
+
+                <p>Tiempo activo: 0 min</p>
+
+                <p>Decisiones tomadas: 0</p>
+
+                <p>Correcciones aplicadas: 0</p>
+
+            </section>
+
+            <!-- OBJETIVOS -->
+            <section id="objetivos">
+
+                <h2>Objetivos Actuales</h2>
+
+                <ul>
+
+                    <li>Mantener estabilidad</li>
+
+                    <li>Reducir errores</li>
+
+                    <li>Optimizar rendimiento</li>
+
+                </ul>
+
+            </section>
+
+            <!-- DECISIONES -->
+            <section id="decisiones">
+
+                <h2>Última Decisión</h2>
+
+                <p>Esperando análisis...</p>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <!-- CONSOLA -->
+    <section id="logs">
+
+        <h2>Registro del Sistema</h2>
+
+        <div id="log-container">
+
+            <p>[Sistema] AutoCore iniciado.</p>
+
         </div>
 
-    </div>
+    </section>
 
-    <div class="topbar" id="topbar">
-        <button class="toggle-sidebar">☰</button>
-        <span class="page-title">Inicio</span>
-        <input
-    type="text"
-    class="search-bar"
-    placeholder="Buscar..."
->
-       <div class="user-profile">
-    D
-</div> 
-    </div>
+    <!-- PIE -->
+    <footer>
 
-    <div class="main-content" id="mainContent">
+        <p>AutoCore v1.0</p>
 
-        <div class="card">
-            <h2>Bienvenido a NEXUS</h2>
-            <p>Sistema listo para iniciar.</p>
-        </div>
-        <div class="stats">
-<div class="activity-card">
-
-    <h2>Actividad reciente</h2>
-
-    <div class="activity-item">
-        Sistema iniciado correctamente.
-    </div>
-
-    <div class="activity-item">
-        No hay eventos recientes.
-    </div>
-
-</div>
-    <div class="stat-card">
-        <h3>Usuarios</h3>
-        <span>0</span>
-    </div>
-
-    <div class="stat-card">
-        <h3>Proyectos</h3>
-        <span>0</span>
-    </div>
-
-    <div class="stat-card">
-        <h3>Tareas</h3>
-        <span>0</span>
-    </div>
-
-</div>
-
-    </div>
+    </footer>
 
     <script src="script.js"></script>
 
 </body>
+
 </html>
