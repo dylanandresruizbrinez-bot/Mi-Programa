@@ -1,6 +1,6 @@
 const sistema = {
 
-```
+
 estado: "ACTIVO",
 
 modo: "NORMAL",
