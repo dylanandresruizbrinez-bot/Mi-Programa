@@ -32,7 +32,7 @@ accionPendiente: null
 
 const estadisticas = {
 
-```
+
 tiempoActivo: 0,
 
 revisiones: 0,
@@ -44,7 +44,7 @@ erroresDetectados: 0,
 correcciones: 0,
 
 aprendizajes: 0
-```
+
 
 };
 
